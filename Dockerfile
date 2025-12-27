@@ -1,11 +1,9 @@
-FROM openjdk:25-rc-slim-trixie
+FROM eclipse-temurin:21-jre-alpine
 
-#ARG
+ARG JAR_FILE=target/devops_0001_hello-1.0.0.jar
 
-#COPY
+COPY ${JAR_FILE} my_app.jar
 
-#CMD
+EXPOSE 8080
 
-#EXPOSE
-
-#ENTRYPOINT
+ENTRYPOINT ["java", "-jar", "/my_app.jar"]
